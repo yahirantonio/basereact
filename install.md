@@ -432,3 +432,61 @@ yarn-error.log
 # Build
 dist/
 ```
+
+# Imagenes en webpack
+
+```bash
+npm install --save-dev file-loader
+```
+
+Configuracion en webpack.config.js
+
+```js
+rules: [
+  {
+    test: /\.(png|gif|jpg)$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: { name: 'assets/[hash].[ext]' },
+      }
+    ],
+  },
+],
+```
+
+Uso de file loader con react
+
+```js
+import React from 'react';
+import nombreDeLaImagen from '../assets/static/nombre-del-archivo';
+
+const Component = () => (
+  <img src={nombreDeLaImagen} />
+);
+
+export default Component;
+```
+
+# Uso de sass
+
+Peticion a una fuente de google
+
+```scss
+  @import url(https://fonts.googleapis.com/css?family=Muli&display-swap)
+```
+
+Para importaciones
+```scss
+@import ""./Vars.scss""
+```
+
+# instalacion de proptypes
+
+```bash
+npm install --save prop-types
+```
+
+```js
+
+```
